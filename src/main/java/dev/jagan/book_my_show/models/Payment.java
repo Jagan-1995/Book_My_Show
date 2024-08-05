@@ -1,6 +1,8 @@
 package dev.jagan.book_my_show.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +14,9 @@ public class Payment extends BaseModel{
 
     private String referenceNumber;
 
+    @Enumerated(EnumType.ORDINAL)
     private PaymentMode paymentMode;
 
+    @Enumerated(EnumType.ORDINAL)
     private PaymentStatus paymentStatus;
 }
